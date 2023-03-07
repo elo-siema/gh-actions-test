@@ -8,11 +8,6 @@ on:
 
 jobs:
 
-  id: skip-workflow # id used for referencing step
-    uses: saulmaldonado/skip-workflow@v1
-    with:
-      phrase: 'skip-workflow'
-      github-token: ${{ secrets.GITHUB_TOKEN }}
   deploy:
     runs-on: ubuntu-latest
     steps:2
