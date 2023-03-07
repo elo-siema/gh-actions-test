@@ -1,15 +1,12 @@
 name: GitHub Actions Demo 2
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
-  pull_request:
-  push:
   issue_comment:
     types: [created]
 
 jobs:
 
   deploy:
-    if: github.event_name == 'issue_comment'
     runs-on: ubuntu-latest
     steps:
 
