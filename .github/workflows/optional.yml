@@ -10,7 +10,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    steps:2
+    steps:
 
       - name: skip-workflow
         id: skip-workflow # id used for referencing step
