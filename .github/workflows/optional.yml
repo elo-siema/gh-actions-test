@@ -7,17 +7,12 @@ on:
     types: [created]
 
 jobs:
-
+  
   deploy:
+    if: github.event_name == 'issue_comment'
     runs-on: ubuntu-latest
     steps:
 
-      - name: skip-workflow
-        id: skip-workflow # id used for referencing step
-        uses: saulmaldonado/skip-workflow@v1
-        with:
-          phrase: /.*/i
-          github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
