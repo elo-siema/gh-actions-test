@@ -3,9 +3,6 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: push
 
 jobs:
-  e2e-tests-prepare:
-    !include: .github/workflows/in.yaml
-
   
   test:
     needs: e2e-tests-prepare
