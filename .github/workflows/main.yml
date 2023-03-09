@@ -1,0 +1,17 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: push
+
+jobs:
+  e2e-tests-prepare:
+    !include: .github/workflows/in.yaml
+
+  
+  test:
+    needs: e2e-tests-prepare
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "name=value" >> $GITHUB_ENV
+      - run: echo ${{env.name}}
+      - run: echo "testtest" > test.txt
+      - run: cat test.txt
