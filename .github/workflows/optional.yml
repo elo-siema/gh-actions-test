@@ -35,3 +35,10 @@ jobs:
           description: 'Passed'
           state: 'success'
           sha: ${{github.event.pull_request.head.sha || github.sha}}
+
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ⏳ [Test run started](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}), branch [${{ github.head_ref }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.head_ref }}) (sha: ${{ github.sha }})
+          allow-repeats: true
+        continue-on-error: true
