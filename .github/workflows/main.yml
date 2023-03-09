@@ -4,8 +4,12 @@ on: push
 
 jobs:
   
+  #e2e-tests-prepare:
+  #  !include: .github/workflows/in.yaml
+
+  
   test:
-    needs: e2e-tests-prepare
+    #needs: e2e-tests-prepare
     runs-on: ubuntu-latest
     steps:
       - run: echo "name=value" >> $GITHUB_ENV
